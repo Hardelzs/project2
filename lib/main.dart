@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project2/pages/counter_page.dart';
+import 'package:project2/pages/calculatorpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CounterPage(),
+      home: CalculatorPage()
+      // home: CounterPage(),
     );
   }
 }
