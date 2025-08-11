@@ -64,25 +64,44 @@ class _CalculatorPageState extends State<CalculatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Simple Calculator')),
+      appBar: AppBar(
+        title: Text('Simple Calculator'),
+        backgroundColor: Colors.blue,
+        ),
+        backgroundColor: Colors.blue[100],
       body: Padding(
         padding: const EdgeInsets.all(16.0),
+        
         child: Column(
           children: [
-            TextField(
-              controller: _num1Controller,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'First number'),
+            Text(
+              'Enter two numbers:',
+              style: TextStyle(fontSize: 18),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 25.0, top: 25.0, ),
+              child: TextField(
+                controller: _num1Controller,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'First number',
+                  border: OutlineInputBorder()
+                ),
+              ),
             ),
             TextField(
               controller: _num2Controller,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Second number'),
+              decoration: InputDecoration(
+                labelText: 'Second number',
+                border: OutlineInputBorder()
+                ),
             ),
             SizedBox(height: 20),
             Wrap(
               spacing: 10,
               children: [
+                
                 ElevatedButton(onPressed: () => _calculate('+'), child: Text('+')),
                 ElevatedButton(onPressed: () => _calculate('-'), child: Text('-')),
                 ElevatedButton(onPressed: () => _calculate('*'), child: Text('×')),
